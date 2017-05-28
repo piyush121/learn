@@ -56,7 +56,7 @@ public class LongestSubstringWithMUniqueCharacters {
 			}
 			end++;
 			//move start forward if number of unique characters is greater than m
-			while(!isLessThanM(hash,m))
+			while(!isLessThanM(hash,m)) // O(N) time in worst case when m = n.
 			{
 				int temp =  hash.get((int)s.charAt(start));
 				hash.put((int)s.charAt(start),--temp);
@@ -73,7 +73,7 @@ public class LongestSubstringWithMUniqueCharacters {
 		
 	}
 	
-	public static boolean isLessThanM(HashMap<Integer,Integer> hash, Integer m)
+	public static boolean isLessThanM(HashMap<Integer,Integer> hash, Integer m) // O(HashMap size) runtime.
 	{
 		int count =0;
 		for(Integer key:hash.keySet())
